@@ -8,5 +8,15 @@ configure :development do
 end
 
 get '/' do
-  "J'adoooore les sushis!!!"
+  @usernames = [ 'ssaunier', 'Papillard' ]
+  erb :index
+end
+
+get '/about' do
+  erb :about
+end
+
+get '/team/:username' do
+  puts params[:username]
+  "The username is #{params[:username]}"
 end
